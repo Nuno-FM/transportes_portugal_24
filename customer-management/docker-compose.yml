@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  postgres-prod:
+    image: postgres:15
+    container_name: postgres_prod
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: prodAdmin123!
+      POSTGRES_DB: customer_management_prod
+    ports:
+      - "5422:5432"
+    volumes:
+      - customer-management-prod-data:/var/lib/postgresql/data
+#      - ./prod-db-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+
+  postgres-test:
+    image: postgres:15
+    container_name: postgres_test
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: testAdmin123!
+      POSTGRES_DB: customer_management_test
+    ports:
+      - "5423:5432"
+    volumes:
+      - customer-management-test-data:/var/lib/postgresql/data
+#      - ./test-db-init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  customer-management-prod-data:
+  customer-management-test-data:

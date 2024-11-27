@@ -1,0 +1,8 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: Customer Management Service
+  profiles:
+    active: prod

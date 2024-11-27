@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5422/customer_management_prod
+    username: admin
+    password: prodAdmin123!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

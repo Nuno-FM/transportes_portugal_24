@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5423/customer_management_test
+    username: admin
+    password: testAdmin123!
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
